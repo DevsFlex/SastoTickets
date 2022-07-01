@@ -17,6 +17,12 @@ public struct SastoTicketsView: View {
     @State var view:AnyView?
     @Environment(\.presentationMode) var presentationMode
     
+    public init( clientId: String, clientSecret:String, callback: @escaping (_ response: [String:Any]?, _ error: Error?)->()){
+        self.clientId = clientId
+        self.clientSecret = clientSecret
+        self.callback = callback
+   
+    }
     public var body: some View {
         
         ZStack{
